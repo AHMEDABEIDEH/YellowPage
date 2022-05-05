@@ -1,0 +1,96 @@
+﻿@model IEnumerable<YellowPage.DBModel.Business>
+
+@{
+    ViewBag.Title = "BusinessDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/Content/css/navigation.css" rel="stylesheet" />
+
+    <style>
+        .main-header {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .main-table {
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 300px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<div class="topnav">
+    <a class="active" href="@Url.Action("AddBusiness", "Business")"><span>Add Business</span></a>
+    <a href="@Url.Action("ViewRequests", "Request")"><span>View Requests</span></a>
+    <a href="@Url.Action("ReportDetail", "Report")"><span>View Reports</span></a>
+    <a href="@Url.Action("ReviewDetail", "Review")"><span>View Reviews</span></a>
+    <a href="@Url.Action("AccountDetail", "Account")"><span>View Users</span></a>
+    <a href="@Url.Action("SuggestionDetail", "Suggestion")"><span>View Suggestion</span></a>
+    
+</div>
+
+
+
+<h2 class="main-header">BusinessDetail</h2>
+
+
+<div class="main-table">
+
+  
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Website)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Website)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Update", "UpdateBusiness", new { id = item.BusinessId }) |
+                    @Html.ActionLink("Delete", "DeleteBusiness", new { id = item.BusinessId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

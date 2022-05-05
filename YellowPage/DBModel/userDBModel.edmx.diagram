@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9f8c0901916d497cb7ddd3de74c86bae" Name="Diagram1">
+        <EntityTypeShape EntityType="UserDBModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserDBModel.Business" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="UserDBModel.Cloth" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="UserDBModel.Market" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="UserDBModel.Restaurant" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="UserDBModel.Technology" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="UserDBModel.Vehicle" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="UserDBModel.Request" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="UserDBModel.Suggestion" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="UserDBModel.Report" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="UserDBModel.Review" Width="1.5" PointX="5.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

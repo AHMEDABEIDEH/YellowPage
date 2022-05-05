@@ -1,0 +1,106 @@
+﻿@model YellowPage.Models.ReportClass
+
+@{
+    ViewBag.Title = "ProvideReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/Content/css/navigation.css" rel="stylesheet" />
+
+    <style>
+        .main-header {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .main-table {
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 300px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<div class="topnav">
+    <a class="active" href="@Url.Action("ProvideReview", "Review")"><span>Make a Review</span></a>
+    <a href="@Url.Action("ProvideReport", "Report")"><span>Make a Report</span></a>
+    
+    <a href="@Url.Action("ProvideSuggestion", "Suggestion")"><span>Make a Suggestion</span></a>
+
+</div>
+
+
+
+
+
+<h2 class="main-header">ReportDetail</h2>
+<div class="main-table">
+
+    <fieldset>
+
+       
+        @using (Html.BeginForm("ProvideReport", "Report", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(model => model.FirstName)</td>
+                    <td>@Html.TextBoxFor(model => model.FirstName)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.ValidationMessageFor(model => model.FirstName, null, new { @class = "text text-danger" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.LastName)</td>
+                    <td>@Html.TextBoxFor(model => model.LastName)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.LastName, null, new { @class = "text text-danger" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Email)</td>
+                    <td>@Html.TextBoxFor(model => model.Email)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Email, null, new { @class = "text text-danger" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Report)</td>
+                    <td>@Html.TextBoxFor(model => model.Report)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Report, null, new { @class = "text text-danger" })</td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <table>
+                            <tr>
+
+                                <td>
+                                    <input type="submit" value="Submit" />
+                                </td>
+                                <td>
+                                    <input type="reset" value="Reset" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.ValidationMessage("Error", null, new { @class = "text text-danger" })</td>
+                </tr>
+            </table>
+        }
+
+    </fieldset>
+
+    </div>

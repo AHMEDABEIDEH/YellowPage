@@ -1,0 +1,426 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="hero_area">
+    <div class="bg-box"></div>
+
+
+    <!-- home section -->
+    <section class="slider_section">
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-lg-6">
+                        <div class="detail-box">
+                            <p class="MixedHeadPart">
+                                <span class="BluePartText">WELCOME THE YELLOWPAGE.COM</span>
+                                <span class="OrangePartText">DONT WAIT ADD YOUR COMPANY</span>
+                            </p>
+                            <div class="btn-box">
+                                <a class="add-company-button" href='@Url.Action("RequestBusiness", "Request")'>
+                                    Add Your Business
+                                    <img src="~/Content/images/add-image.svg" alt="wpbutton" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="icon-bar">
+                            <div class="menu">
+                                <a href='@Url.Action("ViewRestaurants", "Account")' class="link">
+                                    <span class="link-icon">
+
+                                        <img src="~/Content/images/favicon.png" />
+                                    </span>
+                                    <span class="link-title">Restaurant</span>
+                                </a>
+                                <a href='@Url.Action("ViewMarkets", "Account")' class="link">
+                                    <span class="link-icon">
+
+                                        <img src="~/Content/images/store.png" />
+
+                                    </span>
+                                    <span class="link-title">Markets</span>
+                                </a>
+                                <a href='@Url.Action("ViewTech", "Account")' class="link">
+                                    <span class="link-icon">
+
+
+                                        <img src="~/Content/images/laptop.png" />
+
+                                    </span>
+                                    <span class="link-title">Technology</span>
+                                </a>
+
+                                <a href='@Url.Action("ViewClothes", "Account")' class="link">
+                                    <span class="link-icon">
+
+
+                                        <img src="~/Content/images/shirt.png" />
+
+                                    </span>
+                                    <span class="link-title">Fashion</span>
+                                </a>
+                                <a href='@Url.Action("ViewVehicles", "Account")' class="link">
+                                    <span class="link-icon">
+
+
+                                        <img src="~/Content/images/sports-car.png" />
+
+                                    </span>
+                                    <span class="link-title">Vehicles</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- end home section -->
+<!-- filter section -->
+
+<section class="food_section layout_padding-bottom">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>TOP BUSINESS</h2>
+        </div>
+
+        <ul class="filters_menu">
+            <li class="active" data-filter="*">All</li>
+            <li data-filter=".restaurant">Restaurant</li>
+            <li data-filter=".tech">Technology</li>
+            <li data-filter=".market">Markets</li>
+            <li data-filter=".fashion">Fashion</li>
+            <li data-filter=".automobile">Automobiles</li>
+        </ul>
+
+        <div class="filters-content">
+            <div class="row grid">
+                <div class="col-sm-6 col-lg-4 all tech">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/teknosa-logo.svg" alt="teknosa" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>Teknosa</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.teknosa.com/">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/teknosa">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 all restaurant">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/f1c25712136c76755ae4ded16bdfdaaf.svg"
+                                     alt="mc-donalds" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>McDonalds</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.mcdonalds.com.tr">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/mcdonald">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all tech">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+
+                                <img src="~/Content/images/Vatan Bilgisayar-01.svg"
+                                     alt="vatan-computer" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>Vatan Computer</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.vatanbilgisayar.com/">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/vatan+bilgisayar">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all tech">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+
+                                <img src="~/Content/images/LG_logo_vector-01.svg" alt="lg" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>LG</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.lg.com/tr">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/lg/">
+
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all market">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/carrefour-logo-1.svg" alt="carrefour" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>Carrefour</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.carrefoursa.com/">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/carrefoursa">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all market">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/walmart.svg" alt="walmart" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>Wallmart</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.walmart.com/">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/wallmart+">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all automobile">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/Peugeot_logo.svg" alt="peugeot" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>Peugeot</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.peugeot.com.tr/">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/peugeot+">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all restaurant">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/KFC.svg" alt="" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>KFC</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://kfcturkiye.com/">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/kfc">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 all automobile">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/bmw-logo.svg" alt="" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>BMW</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.bmw.com.tr/tr/index.html">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/bmw">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all restaurant">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/7ad25adde3395467eb96657172e9637c.svg" alt="" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>Burger King</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.burgerking.com.tr/">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/burger+king">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 all fashion">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/Mavi Jeans-01.svg" alt="" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>Mavi</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.mavi.com/">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/mavi">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all fashion">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="~/Content/images/bvlgari (1).svg" alt="" />
+                            </div>
+                            <div class="detail-box">
+                                <h5>Bvlgari</h5>
+                                <p>
+                                    Veniam debitis quaerat officiis quasi cupiditate quo,
+                                    quisquam velit, magnam voluptatem repellendus sed eaque
+                                </p>
+                                <div class="options">
+                                    <a href="https://www.bulgari.com/en-int/">
+                                        <h6>Site link</h6>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/bvlgari">
+                                        <img src="~/Content/images/google-maps.png" alt="Direction" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-box">
+            <a href="@Url.Action("BusinessDetailUser", "Com")">View More</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- jQery -->
+<script src="~/js/jquery-3.4.1.min.js"></script>
+<!-- popper js -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<!-- bootstrap js -->
+<script src="~/js/bootstrap.js"></script>
+<!-- owl slider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- isotope js -->
+<script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+<!-- nice select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+<!-- custom js -->
+<script src="~/js/custom.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>

@@ -1,0 +1,535 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{622C469F-A8C6-4689-8F02-D893E8E02F3F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YellowPage</RootNamespace>
+    <AssemblyName>YellowPage</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44375</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\FORM.css" />
+    <Content Include="Content\css\icon-bar.css" />
+    <Content Include="Content\css\navigation.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\SIGN-UP-IN.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\images\352936.svg" />
+    <Content Include="Content\images\7ad25adde3395467eb96657172e9637c.svg" />
+    <Content Include="Content\images\about-img.png" />
+    <Content Include="Content\images\add-image.svg" />
+    <Content Include="Content\images\arbys.svg" />
+    <Content Include="Content\images\attachments-attach-svgrepo-com.svg" />
+    <Content Include="Content\images\bmw-logo.svg" />
+    <Content Include="Content\images\bmw.svg" />
+    <Content Include="Content\images\bvlgari %281%29.svg" />
+    <Content Include="Content\images\car.svg" />
+    <Content Include="Content\images\carrefour-logo-1.svg" />
+    <Content Include="Content\images\citroen-2009.svg" />
+    <Content Include="Content\images\client1.jpg" />
+    <Content Include="Content\images\client2.jpg" />
+    <Content Include="Content\images\Desktop - 1.svg" />
+    <Content Include="Content\images\f1.png" />
+    <Content Include="Content\images\f1c25712136c76755ae4ded16bdfdaaf.svg" />
+    <Content Include="Content\images\f2.png" />
+    <Content Include="Content\images\f3.png" />
+    <Content Include="Content\images\f4.png" />
+    <Content Include="Content\images\f5.png" />
+    <Content Include="Content\images\f6.png" />
+    <Content Include="Content\images\f7.png" />
+    <Content Include="Content\images\f8.png" />
+    <Content Include="Content\images\f9.png" />
+    <Content Include="Content\images\favicon.png" />
+    <Content Include="Content\images\google-maps.png" />
+    <Content Include="Content\images\Group 1.svg" />
+    <Content Include="Content\images\hero-bg.jpg" />
+    <Content Include="Content\images\icons8-google-maps.svg" />
+    <Content Include="Content\images\instagram.png" />
+    <Content Include="Content\images\kafa resmi.svg" />
+    <Content Include="Content\images\KFC.svg" />
+    <Content Include="Content\images\laptop.png" />
+    <Content Include="Content\images\LG_logo_vector-01.svg" />
+    <Content Include="Content\images\linkedin.png" />
+    <Content Include="Content\images\LOGO %281%29.svg" />
+    <Content Include="Content\images\mapbase.svg" />
+    <Content Include="Content\images\mapbase2.svg" />
+    <Content Include="Content\images\Mavi Jeans-01.svg" />
+    <Content Include="Content\images\Media Markt-01.svg" />
+    <Content Include="Content\images\migros-logo-vector.svg" />
+    <Content Include="Content\images\o1.jpg" />
+    <Content Include="Content\images\o2.jpg" />
+    <Content Include="Content\images\Papirus-Team-Papirus-Apps-Accessories-notes.svg" />
+    <Content Include="Content\images\peugeot-new-2021-seeklogo.com-1.svg" />
+    <Content Include="Content\images\Peugeot_logo.svg" />
+    <Content Include="Content\images\pinterest.png" />
+    <Content Include="Content\images\right-container.svg" />
+    <Content Include="Content\images\shirt.png" />
+    <Content Include="Content\images\Sony-01.svg" />
+    <Content Include="Content\images\sports-car.png" />
+    <Content Include="Content\images\store.png" />
+    <Content Include="Content\images\teknosa-logo.svg" />
+    <Content Include="Content\images\tesla-motors.svg" />
+    <Content Include="Content\images\twitter.png" />
+    <Content Include="Content\images\Vatan Bilgisayar-01.svg" />
+    <Content Include="Content\images\Volkswagen_logo.svg" />
+    <Content Include="Content\images\walmart.svg" />
+    <Content Include="Content\images\whatsapp - Kopya.svg" />
+    <Content Include="Content\images\whatsapp.png" />
+    <Content Include="Content\images\whatsapp.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\icon-bar.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\style.css" />
+    <Content Include="DBModel\userDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>userDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>userDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DBModel\userDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>userDBModel.edmx</DependentUpon>
+      <LastGenOutput>userDBModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="images\352936.svg" />
+    <Content Include="images\7ad25adde3395467eb96657172e9637c.svg" />
+    <Content Include="images\about-img.png" />
+    <Content Include="images\add-image.svg" />
+    <Content Include="images\arbys.svg" />
+    <Content Include="images\bmw-logo.svg" />
+    <Content Include="images\bmw.svg" />
+    <Content Include="images\bvlgari %281%29.svg" />
+    <Content Include="images\car.svg" />
+    <Content Include="images\carrefour-logo-1.svg" />
+    <Content Include="images\citroen-2009.svg" />
+    <Content Include="images\client1.jpg" />
+    <Content Include="images\client2.jpg" />
+    <Content Include="images\Desktop - 1.svg" />
+    <Content Include="images\f1.png" />
+    <Content Include="images\f1c25712136c76755ae4ded16bdfdaaf.svg" />
+    <Content Include="images\f2.png" />
+    <Content Include="images\f3.png" />
+    <Content Include="images\f4.png" />
+    <Content Include="images\f5.png" />
+    <Content Include="images\f6.png" />
+    <Content Include="images\f7.png" />
+    <Content Include="images\f8.png" />
+    <Content Include="images\f9.png" />
+    <Content Include="images\favicon.png" />
+    <Content Include="images\google-maps.png" />
+    <Content Include="images\Group 1.svg" />
+    <Content Include="images\hero-bg.jpg" />
+    <Content Include="images\icons8-google-maps.svg" />
+    <Content Include="images\kafa resmi.svg" />
+    <Content Include="images\KFC.svg" />
+    <Content Include="images\laptop.png" />
+    <Content Include="images\LG_logo_vector-01.svg" />
+    <Content Include="images\LOGO %281%29.svg" />
+    <Content Include="images\mapbase.svg" />
+    <Content Include="images\mapbase2.svg" />
+    <Content Include="images\Mavi Jeans-01.svg" />
+    <Content Include="images\Media Markt-01.svg" />
+    <Content Include="images\migros-logo-vector.svg" />
+    <Content Include="images\o1.jpg" />
+    <Content Include="images\o2.jpg" />
+    <Content Include="images\Papirus-Team-Papirus-Apps-Accessories-notes.svg" />
+    <Content Include="images\peugeot-new-2021-seeklogo.com-1.svg" />
+    <Content Include="images\Peugeot_logo.svg" />
+    <Content Include="images\right-container.svg" />
+    <Content Include="images\shirt.png" />
+    <Content Include="images\Sony-01.svg" />
+    <Content Include="images\sports-car.png" />
+    <Content Include="images\store.png" />
+    <Content Include="images\teknosa-logo.svg" />
+    <Content Include="images\tesla-motors.svg" />
+    <Content Include="images\Vatan Bilgisayar-01.svg" />
+    <Content Include="images\Volkswagen_logo.svg" />
+    <Content Include="images\walmart.svg" />
+    <Content Include="images\whatsapp - Kopya.svg" />
+    <Content Include="images\whatsapp.png" />
+    <Content Include="images\whatsapp.svg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\jquery-3.4.1.min.js" />
+    <Content Include="js\sign.js" />
+    <Content Include="lib\font-awesome\css\all.css" />
+    <Content Include="lib\font-awesome\css\all.min.css" />
+    <Content Include="lib\font-awesome\css\brands.css" />
+    <Content Include="lib\font-awesome\css\brands.min.css" />
+    <Content Include="lib\font-awesome\css\fontawesome.css" />
+    <Content Include="lib\font-awesome\css\fontawesome.min.css" />
+    <Content Include="lib\font-awesome\css\regular.css" />
+    <Content Include="lib\font-awesome\css\regular.min.css" />
+    <Content Include="lib\font-awesome\css\solid.css" />
+    <Content Include="lib\font-awesome\css\solid.min.css" />
+    <Content Include="lib\font-awesome\css\svg-with-js.css" />
+    <Content Include="lib\font-awesome\css\svg-with-js.min.css" />
+    <Content Include="lib\font-awesome\css\v4-shims.css" />
+    <Content Include="lib\font-awesome\css\v4-shims.min.css" />
+    <Content Include="lib\font-awesome\js\all.js" />
+    <Content Include="lib\font-awesome\js\all.min.js" />
+    <Content Include="lib\font-awesome\js\brands.js" />
+    <Content Include="lib\font-awesome\js\brands.min.js" />
+    <Content Include="lib\font-awesome\js\conflict-detection.js" />
+    <Content Include="lib\font-awesome\js\conflict-detection.min.js" />
+    <Content Include="lib\font-awesome\js\fontawesome.js" />
+    <Content Include="lib\font-awesome\js\fontawesome.min.js" />
+    <Content Include="lib\font-awesome\js\regular.js" />
+    <Content Include="lib\font-awesome\js\regular.min.js" />
+    <Content Include="lib\font-awesome\js\solid.js" />
+    <Content Include="lib\font-awesome\js\solid.min.js" />
+    <Content Include="lib\font-awesome\js\v4-shims.js" />
+    <Content Include="lib\font-awesome\js\v4-shims.min.js" />
+    <Content Include="lib\font-awesome\sprites\brands.svg" />
+    <Content Include="lib\font-awesome\sprites\regular.svg" />
+    <Content Include="lib\font-awesome\sprites\solid.svg" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BusinessController.cs" />
+    <Compile Include="Controllers\ComController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\RequestController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
+    <Compile Include="Controllers\SuggestionController.cs" />
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Business.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Cloth.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Market.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Report.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Request.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Restaurant.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Review.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Suggestion.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Technology.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\updateAccount_Result.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\updateBusiness_Result.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\updateReport_Result.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\updateRequest_Result.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\updateReview_Result.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\updateSuggestion_Result.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\User.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\userDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\userDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\userDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Vehicle.cs">
+      <DependentUpon>userDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BusinessClass.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\ReportClass.cs" />
+    <Compile Include="Models\RequestClass.cs" />
+    <Compile Include="Models\ReviewClass.cs" />
+    <Compile Include="Models\SuggestionClass.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <EntityDeploy Include="DBModel\userDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>userDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DBModel\userDBModel.edmx.diagram">
+      <DependentUpon>userDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="css\style.css.map" />
+    <Content Include="css\style.scss" />
+    <Content Include="Content\css\style.css.map" />
+    <Content Include="Content\css\style.scss" />
+    <Content Include="Content\css\fontawesome-webfont.ttf" />
+    <Content Include="Content\css\fontawesome-webfont.woff" />
+    <Content Include="Content\css\fontawesome-webfont.woff2" />
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="libman.json" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Shared\_loginPartial.cshtml" />
+    <Content Include="Views\Com\Create.cshtml" />
+    <Content Include="Views\Com\BusinessDetail.cshtml" />
+    <Content Include="Views\Account\Admin.cshtml" />
+    <Content Include="Views\Account\User.cshtml" />
+    <Content Include="Views\Account\AccountDetail.cshtml" />
+    <Content Include="Views\Account\ViewVehicles.cshtml" />
+    <Content Include="Views\Account\ViewRestaurants.cshtml" />
+    <Content Include="Views\Account\ViewClothes.cshtml" />
+    <Content Include="Views\Account\ViewTech.cshtml" />
+    <Content Include="Views\Business\AddBusiness.cshtml" />
+    <Content Include="Views\Account\ViewMarkets.cshtml" />
+    <Content Include="Views\Request\RequestBusiness.cshtml" />
+    <Content Include="Views\Account\ViewRequests.cshtml" />
+    <Content Include="Views\Request\ViewRequests.cshtml" />
+    <Content Include="Views\Suggestion\ProvideSuggestion.cshtml" />
+    <Content Include="Views\Review\ProvideReview.cshtml" />
+    <Content Include="Views\Report\ProvideReport.cshtml" />
+    <Content Include="Views\Review\ReviewDetail.cshtml" />
+    <Content Include="Views\Suggestion\SuggestionDetail.cshtml" />
+    <Content Include="Views\Report\ReportDetail.cshtml" />
+    <Content Include="Views\Com\BusinessDetailUser.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50280</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44375/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

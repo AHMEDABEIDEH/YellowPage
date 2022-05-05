@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UserDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Businesses">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+          </Key>
+          <Property Name="BusinessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Report" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Requests">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+          </Key>
+          <Property Name="BusinessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Review" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Suggestions">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Suggestion" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'UserDB.dbo.Clothes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Clothes">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'UserDB.dbo.Markets' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Markets">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'UserDB.dbo.Restaurants' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Restaurants">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'UserDB.dbo.Technologies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Technologies">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'UserDB.dbo.Vehicles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vehicles">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <Function Name="deleteAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="deleteBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="deleteReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="deleteRequest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="deleteReview" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="deleteSuggestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateRequest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateReview" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateSuggestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="UserDBModelStoreContainer">
+          <EntitySet Name="Businesses" EntityType="Self.Businesses" Schema="Com" store:Type="Tables" />
+          <EntitySet Name="Reports" EntityType="Self.Reports" Schema="Rep" store:Type="Tables" />
+          <EntitySet Name="Requests" EntityType="Self.Requests" Schema="Req" store:Type="Tables" />
+          <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="Rev" store:Type="Tables" />
+          <EntitySet Name="Suggestions" EntityType="Self.Suggestions" Schema="Sug" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="User" store:Type="Tables" />
+          <EntitySet Name="Clothes" EntityType="Self.Clothes" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Clothes].[BusinessId] AS [BusinessId], 
+    [Clothes].[Company] AS [Company], 
+    [Clothes].[Category] AS [Category], 
+    [Clothes].[Address] AS [Address], 
+    [Clothes].[Phone] AS [Phone], 
+    [Clothes].[Description] AS [Description], 
+    [Clothes].[Website] AS [Website]
+    FROM [dbo].[Clothes] AS [Clothes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Markets" EntityType="Self.Markets" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Markets].[BusinessId] AS [BusinessId], 
+    [Markets].[Company] AS [Company], 
+    [Markets].[Category] AS [Category], 
+    [Markets].[Address] AS [Address], 
+    [Markets].[Phone] AS [Phone], 
+    [Markets].[Description] AS [Description], 
+    [Markets].[Website] AS [Website]
+    FROM [dbo].[Markets] AS [Markets]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Restaurants" EntityType="Self.Restaurants" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Restaurants].[BusinessId] AS [BusinessId], 
+    [Restaurants].[Company] AS [Company], 
+    [Restaurants].[Category] AS [Category], 
+    [Restaurants].[Address] AS [Address], 
+    [Restaurants].[Phone] AS [Phone], 
+    [Restaurants].[Description] AS [Description], 
+    [Restaurants].[Website] AS [Website]
+    FROM [dbo].[Restaurants] AS [Restaurants]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Technologies" EntityType="Self.Technologies" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Technologies].[BusinessId] AS [BusinessId], 
+    [Technologies].[Company] AS [Company], 
+    [Technologies].[Category] AS [Category], 
+    [Technologies].[Address] AS [Address], 
+    [Technologies].[Phone] AS [Phone], 
+    [Technologies].[Description] AS [Description], 
+    [Technologies].[Website] AS [Website]
+    FROM [dbo].[Technologies] AS [Technologies]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicles" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vehicles].[BusinessId] AS [BusinessId], 
+    [Vehicles].[Company] AS [Company], 
+    [Vehicles].[Category] AS [Category], 
+    [Vehicles].[Address] AS [Address], 
+    [Vehicles].[Phone] AS [Phone], 
+    [Vehicles].[Description] AS [Description], 
+    [Vehicles].[Website] AS [Website]
+    FROM [dbo].[Vehicles] AS [Vehicles]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UserDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="UserDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <FunctionImport Name="deleteAccount">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateAccount" ReturnType="Collection(UserDBModel.updateAccount_Result)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="deleteBusiness">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateBusiness" ReturnType="Collection(UserDBModel.updateBusiness_Result)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Businesses" EntityType="UserDBModel.Business" />
+          <EntitySet Name="Clothes" EntityType="UserDBModel.Cloth" />
+          <EntitySet Name="Markets" EntityType="UserDBModel.Market" />
+          <EntitySet Name="Restaurants" EntityType="UserDBModel.Restaurant" />
+          <EntitySet Name="Technologies" EntityType="UserDBModel.Technology" />
+          <EntitySet Name="Vehicles" EntityType="UserDBModel.Vehicle" />
+          <EntitySet Name="Requests" EntityType="UserDBModel.Request" />
+          <FunctionImport Name="deleteRequest">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateRequest" ReturnType="Collection(UserDBModel.updateRequest_Result)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Suggestions" EntityType="UserDBModel.Suggestion" />
+          <EntitySet Name="Reports" EntityType="UserDBModel.Report" />
+          <EntitySet Name="Reviews" EntityType="UserDBModel.Review" />
+          <FunctionImport Name="deleteReport">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="deleteReview">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="deleteSuggestion">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateReport" ReturnType="Collection(UserDBModel.updateReport_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateReview" ReturnType="Collection(UserDBModel.updateReview_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateSuggestion" ReturnType="Collection(UserDBModel.updateSuggestion_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="updateAccount_Result">
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="updateBusiness_Result">
+          <Property Type="Int32" Name="BusinessId" Nullable="false" />
+          <Property Type="String" Name="Company" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Category" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="150" />
+        </ComplexType>
+        <EntityType Name="Business">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+          </Key>
+          <Property Name="BusinessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Cloth">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Market">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Restaurant">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Technology">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+            <PropertyRef Name="Company" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="BusinessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="BusinessId" />
+          </Key>
+          <Property Name="BusinessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="updateRequest_Result">
+          <Property Type="Int32" Name="BusinessId" Nullable="false" />
+          <Property Type="String" Name="Company" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Category" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="Website" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="Suggestion">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Suggestion1" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Report1" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Review1" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="updateReport_Result">
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Report" Nullable="false" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="updateReview_Result">
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Review" Nullable="false" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="updateSuggestion_Result">
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Suggestion" Nullable="false" MaxLength="300" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UserDBModelStoreContainer" CdmEntityContainer="UserDBEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="UserDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="deleteAccount" FunctionName="UserDBModel.Store.deleteAccount" />
+          <FunctionImportMapping FunctionImportName="updateAccount" FunctionName="UserDBModel.Store.updateAccount">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UserDBModel.updateAccount_Result">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="deleteBusiness" FunctionName="UserDBModel.Store.deleteBusiness" />
+          <FunctionImportMapping FunctionImportName="updateBusiness" FunctionName="UserDBModel.Store.updateBusiness">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UserDBModel.updateBusiness_Result">
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Businesses">
+            <EntityTypeMapping TypeName="UserDBModel.Business">
+              <MappingFragment StoreEntitySet="Businesses">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clothes">
+            <EntityTypeMapping TypeName="UserDBModel.Cloth">
+              <MappingFragment StoreEntitySet="Clothes">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Markets">
+            <EntityTypeMapping TypeName="UserDBModel.Market">
+              <MappingFragment StoreEntitySet="Markets">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Restaurants">
+            <EntityTypeMapping TypeName="UserDBModel.Restaurant">
+              <MappingFragment StoreEntitySet="Restaurants">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Technologies">
+            <EntityTypeMapping TypeName="UserDBModel.Technology">
+              <MappingFragment StoreEntitySet="Technologies">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="UserDBModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicles">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requests">
+            <EntityTypeMapping TypeName="UserDBModel.Request">
+              <MappingFragment StoreEntitySet="Requests">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="deleteRequest" FunctionName="UserDBModel.Store.deleteRequest" />
+          <FunctionImportMapping FunctionImportName="updateRequest" FunctionName="UserDBModel.Store.updateRequest">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UserDBModel.updateRequest_Result">
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Suggestions">
+            <EntityTypeMapping TypeName="UserDBModel.Suggestion">
+              <MappingFragment StoreEntitySet="Suggestions">
+                <ScalarProperty Name="Suggestion1" ColumnName="Suggestion" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="UserDBModel.Report">
+              <MappingFragment StoreEntitySet="Reports">
+                <ScalarProperty Name="Report1" ColumnName="Report" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="UserDBModel.Review">
+              <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="Review1" ColumnName="Review" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="deleteReport" FunctionName="UserDBModel.Store.deleteReport" />
+          <FunctionImportMapping FunctionImportName="deleteReview" FunctionName="UserDBModel.Store.deleteReview" />
+          <FunctionImportMapping FunctionImportName="deleteSuggestion" FunctionName="UserDBModel.Store.deleteSuggestion" />
+          <FunctionImportMapping FunctionImportName="updateReport" FunctionName="UserDBModel.Store.updateReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UserDBModel.updateReport_Result">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Report" ColumnName="Report" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updateReview" FunctionName="UserDBModel.Store.updateReview">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UserDBModel.updateReview_Result">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Review" ColumnName="Review" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updateSuggestion" FunctionName="UserDBModel.Store.updateSuggestion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UserDBModel.updateSuggestion_Result">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Suggestion" ColumnName="Suggestion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

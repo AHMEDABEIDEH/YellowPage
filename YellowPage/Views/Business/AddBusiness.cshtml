@@ -1,0 +1,125 @@
+﻿@model YellowPage.Models.BusinessClass
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/Content/css/navigation.css" rel="stylesheet" />
+
+    <style>
+        .main-header {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .main-table {
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 300px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<div class="topnav">
+    <a class="active" href="@Url.Action("AddBusiness", "Business")"><span>Add Business</span></a>
+    <a href="@Url.Action("ViewRequests", "Request")"><span>View Requests</span></a>
+    <a href="@Url.Action("ReportDetail", "Report")"><span>View Reports</span></a>
+    <a href="@Url.Action("ReviewDetail", "Review")"><span>View Reviews</span></a>
+    <a href="@Url.Action("AccountDetail", "Account")"><span>View Users</span></a>
+    <a href="@Url.Action("SuggestionDetail", "Suggestion")"><span>View Suggestion</span></a>
+    <a href="@Url.Action("BusinessDetail", "Com")"><span>View Businesses</span></a>
+</div>
+
+<h2 class="main-header">BusinessDetail</h2>
+<div class="main-table">
+
+    <fieldset>
+
+
+        @using (Html.BeginForm("AddBusiness", "Business", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Company)</td>
+                    <td>@Html.TextBoxFor(model => model.Company)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.ValidationMessageFor(model => model.Company, null, new { @class = "text text-danger" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Category)</td>
+                    <td>@Html.TextBoxFor(model => model.Category)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Category, null, new { @class = "text text-danger" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Address)</td>
+                    <td>@Html.TextBoxFor(model => model.Address)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Address, null, new { @class = "text text-danger" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Phone)</td>
+                    <td>@Html.TextBoxFor(model => model.Phone)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Phone, null, new { @class = "text text-danger" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Description)</td>
+                    <td>@Html.TextBoxFor(model => model.Description)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Description, null, new { @class = "text text-danger" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Website)</td>
+                    <td>@Html.TextBoxFor(model => model.Website)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Website, null, new { @class = "text text-danger" })</td>
+                </tr>
+
+
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <form>
+                            <table>
+
+                                <tr>
+
+                                    <td>
+                                        <input type="submit" value="Register" />
+                                    </td>
+                                    <td>
+                                        <input type="reset" value="Reset" />
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.ValidationMessage("Error", null, new { @class = "text text-danger" })</td>
+                </tr>
+            </table>
+        }
+
+    </fieldset>
+</div>

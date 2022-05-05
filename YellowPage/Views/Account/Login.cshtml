@@ -1,0 +1,84 @@
+﻿@model YellowPages.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="~/Content/css/SIGN-UP-IN.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+
+<div class="body">
+
+    <div class="containerSG" id="containerSG">
+        <div class="form-containerSG sign-up-containerSG">
+            <form action="#">
+                <h1>Create Account</h1>
+
+              
+
+            </form>
+        </div>
+        <div class="form-containerSG sign-in-containerSG">
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+            {
+<form action="#">
+
+    <h1>Sign in</h1>
+
+    <table>
+        <tr>
+            <td>@Html.LabelFor(model => model.Email)</td>
+            <td>@Html.TextBoxFor(model => model.Email)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(model => model.Email, null, new { @class = "text text-danger" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Password)</td>
+            <td>@Html.PasswordFor(model => model.Password)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(model => model.Password, null, new { @class = "text text-danger" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Login" />
+                        </td>
+
+                        <td>
+                            <input type="reset" value="Reset" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.ValidationMessage("Error", null, new { @class = "text text-danger" })</td>
+        </tr>
+    </table>
+    <a href="#">Forgot your password?</a>
+    <input class="signup" type="submit" value="Login" />
+
+</form>}
+        </div>
+       
+    </div>
+
+</div>
+
+
+<script src="~/js/sign.js"></script>

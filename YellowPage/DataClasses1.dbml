@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UserDB" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=Ahmed;Initial Catalog=UserDB;Persist Security Info=True;User ID=sa;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UserDBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.curd" Method="curd">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Company" Parameter="company" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CrudOption" Parameter="crudOption" Type="System.String" DbType="NVarChar(50)" />
+  </Function>
+</Database>
